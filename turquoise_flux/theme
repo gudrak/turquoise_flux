@@ -1,0 +1,233 @@
+# Turquoise Grass Pekwm theme
+# Author: Hanna P
+# Homepage: http://cutebuntu.moonthology.org
+
+$FONT = "XFT#Bauhaus Medium:size=8#Left"
+$FONT_TITLE = "XFT#Bauhaus Medium:size=8#Center"
+
+Require {
+  Templates = "True"
+}
+
+Define = "BaseDecor" {
+  Height = "19"
+
+  # Increase first number to bring title text downwards
+  Pad = "3 5 5 0"
+
+  Focused = "Image title.png"
+  Unfocused = "Image title.png"
+
+  Tab {
+    Focused = "Image title.png"
+    FocusedSelected = "Image title.png"
+    Unfocused = "Image title.png"
+    UnfocusedSelected = "Image title.png"
+  }
+  Separator {
+    Focused = "empty"
+    Unfocused = "empty"
+  }
+  Font {
+    Focused = "$FONT_TITLE"
+  }
+  FontColor {
+    Focused = "#999999"
+    FocusedSelected = "#999999"
+    Unfocused = "#999999"
+    UnfocusedSelected = "#999999"
+  }
+  Border {
+    Focused {
+      TopLeft = "Image border_top_left.png"
+      Top = "Image border_top.png"
+      TopRight = "Image border_top_right.png"
+      Left =  "Image border_left.png"
+      Right = "Image border_right.png"
+      BottomLeft = "Image border_bottom_left.png"
+      Bottom = "Image border_bottom.png"
+      BottomRight = "Image border_bottom_right.png"
+    }
+    Unfocused {
+      TopLeft = "Image border_top_left.png"
+      Top = "Image border_top.png"
+      TopRight = "Image border_top_right.png"
+      Left =  "Image border_left.png"
+      Right = "Image border_right.png"
+      BottomLeft = "Image border_bottom_left.png"
+      Bottom = "Image border_bottom.png"
+      BottomRight = "Image border_bottom_right.png"
+    }
+  }
+}
+
+Define = "BaseButtons" {
+  Buttons {
+    Right = "Close" {
+      Focused = "Image button_close.png"
+      Unfocused = "Image button_close.png"
+      Hoover = "Image button_close_focus.png"
+      Pressed = "Image button_close_focus.png"
+      Button = "1" { Actions = "Close" }
+      Button = "3" { Actions = "Kill" }
+    }
+
+    Right = "Maximize" {
+      Focused = "Image button_max.png"
+      Unfocused = "Image button_max.png"
+      Hoover = "Image button_max_focus.png"
+      Pressed = "Image button_max_focus.png"
+      Button = "1" { Actions = "Toggle Maximized 1 1" }
+    }
+
+    Right = "Iconify" {
+      Focused = "Image button_min.png"
+      Unfocused = "Image button_min.png"
+      Hoover = "Image button_min_focus.png"
+      Pressed = "Image button_min_focus.png"
+      Button = "1" { Actions = "Set Iconified" }
+    }
+      
+    Left = "Shade" {
+        Focused = "Image button_shade.png"
+        Unfocused = "Image button_shade.png"
+        Hoover = "Image button_shade_focus.png"
+        Pressed = "Image button_shade_focus.png"
+        Button = "1" { Actions = "Toggle Shaded" }
+    }
+  }
+}
+
+Define = "EmptyDecor" {
+  Focused = "Empty"
+  Unfocused = "Empty"
+
+  Tab {
+    Focused = "Empty"
+    FocusedSelected = "Empty"
+    Unfocused = "Empty"
+    UnfocusedSelected = "Empty"
+  }
+
+  Separator {
+    Focused = "Empty"
+    Unfocused = "Empty"
+  }
+
+  Font {
+    Focused = "$FONT_TITLE"
+  }
+
+  FontColor {
+    Focused = "#999999"
+    FocusedSelected = "#999999"
+    Unfocused = "#999999"
+    UnfocusedSelected = "#999999"
+  }    
+
+  Border {
+    Focused {
+      TopLeft = "Image border_top_left.png"
+      Top = "Image border_top.png"
+      TopRight = "Image border_top_right.png"
+      Left =  "Image border_left.png"
+      Right = "Image border_right.png"
+      BottomLeft = "Image border_bottom_left.png"
+      Bottom = "Image border_bottom.png"
+      BottomRight = "Image border_bottom_right.png"
+    }
+    Unfocused {
+      TopLeft = "Image border_top_left.png"
+      Top = "Image border_top.png"
+      TopRight = "Image border_top_right.png"
+      Left =  "Image border_left.png"
+      Right = "Image border_right.png"
+      BottomLeft = "Image border_bottom_left.png"
+      Bottom = "Image border_bottom.png"
+      BottomRight = "Image border_bottom_right.png"
+    }
+  }
+}
+
+PDecor {
+  Decor = "Default" {
+    Title {
+      @BaseDecor
+      @BaseButtons
+    }
+  }
+
+  Decor = "Menu" {
+    Title {
+      @BaseDecor
+    }
+  }
+
+  Decor = "Titlebarless" {
+    Title {
+      @EmptyDecor
+    }
+  }
+
+  Decor = "Statuswindow" {
+    Title {
+      @EmptyDecor
+    }
+  }
+}
+
+Harbour {
+  Texture = "Solid #999999"
+}
+
+Menu {
+  Pad = "0 0 4 4" 
+
+  Focused {
+    Font = "$FONT"
+    Background = "Solid #151515"
+    Item = "Empty"
+    Text = "#999999" 
+    Separator = "Image menuline.png#Scaled"
+    Arrow = "Image arrow.png"
+  }
+  Unfocused {
+    Font = "$FONT"
+    Background = "Solid #151515"
+    Item = "Empty"
+    Text = "#999999"
+    Separator = "Image menuline.png#Scaled"
+    Arrow = "Image arrow.png"
+  }
+  Selected {
+    Font = "$FONT"
+    Background = "Solid #151515"
+    Item = "Image menu_sel.png"
+    Text = "#bbbbbb"
+    Arrow = "Image arrow_sel.png"
+  }
+}
+
+CmdDialog {
+  Font = "$FONT"
+  Texture = "Solid #151515"
+  Text = "#999999"
+  Pad = "3 0 1 10"
+}
+
+Status {
+  Font = "$FONT"  
+  Texture = "Solid #151515"
+  Text = "#999999"
+  Pad = "2 2 10 10"
+}
+
+WorkspaceIndicator {
+  Font = "$FONT"  
+  Background = "Solid #151515"
+  Workspace = "Solid #222222"
+  WorkspaceActive = "Solid #111111"
+  Text = "#999999"
+  EdgePadding = "2 2 2 2"
+  WorkspacePadding = "2 2 2 2"
+}
